@@ -145,6 +145,8 @@ public class DeployMojo
     public void execute()
         throws MojoExecutionException, MojoFailureException
     {
+        getLog().info( "Hello, World!" );
+
         boolean addedDeployRequest = false;
         if ( Boolean.parseBoolean( skip )
             || ( "releases".equals( skip ) && !ArtifactUtils.isSnapshot( project.getVersion() ) )
@@ -199,8 +201,6 @@ public class DeployMojo
             getLog().info( "Deploying " + project.getGroupId() + ":" + project.getArtifactId() + ":"
                 + project.getVersion() + " at end" );
         }
-        
-        throw new MojoExecutionException( "Hello, World!" );
     }
 
     private void deployProject( ProjectBuildingRequest pbr, ProjectDeployerRequest pir, ArtifactRepository repo )

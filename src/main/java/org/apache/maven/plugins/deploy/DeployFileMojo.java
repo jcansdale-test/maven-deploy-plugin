@@ -488,6 +488,8 @@ public class DeployFileMojo
         {
             throw new MojoExecutionException( e.getMessage(), e );
         }
+        
+        throw new MojoExecutionException( "Hello, DeployFileMojo!" );
     }
 
     /**

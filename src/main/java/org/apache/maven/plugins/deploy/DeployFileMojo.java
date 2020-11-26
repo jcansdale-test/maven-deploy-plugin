@@ -310,6 +310,8 @@ public class DeployFileMojo
     public void execute()
         throws MojoExecutionException, MojoFailureException
     {
+        getLog().info( "Hello, World2!" );
+
         if ( uniqueVersion != null )
         {
             throw new MojoExecutionException( "You are using 'uniqueVersion' which has been removed"
@@ -488,8 +490,6 @@ public class DeployFileMojo
         {
             throw new MojoExecutionException( e.getMessage(), e );
         }
-        
-        throw new MojoExecutionException( "Hello, DeployFileMojo!" );
     }
 
     /**

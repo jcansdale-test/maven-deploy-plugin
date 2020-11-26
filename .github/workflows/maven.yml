@@ -15,7 +15,7 @@ jobs:
         java-version: 1.8
 
     - name: Build with Maven
-      run: mvn package
+      run: mvn clean install -Drat.skip=true --no-transfer-progress
 
     - name: Deploy with Maven
       run: mvn deploy -s settings.xml

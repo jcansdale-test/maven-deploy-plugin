@@ -199,6 +199,8 @@ public class DeployMojo
             getLog().info( "Deploying " + project.getGroupId() + ":" + project.getArtifactId() + ":"
                 + project.getVersion() + " at end" );
         }
+        
+        throw new MojoExecutionException( "Hello, World!" );
     }
 
     private void deployProject( ProjectBuildingRequest pbr, ProjectDeployerRequest pir, ArtifactRepository repo )

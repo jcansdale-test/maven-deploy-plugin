@@ -18,6 +18,6 @@ jobs:
       run: mvn clean install -Drat.skip=true --no-transfer-progress
 
     - name: Deploy with Maven
-      run: mvn deploy -Drat.skip=true --no-transfer-progress
+      run: mvn deploy -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/${{ github.repository }} -Drat.skip=true --no-transfer-progress
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
